@@ -2,10 +2,8 @@ import re
 
 
 def application(env, start_response):
-    start_response('200 OK', [('Content-Type','text/plain')])
     string = env['QUERY_STRING']
-    result = [i + '\n' for i in result.split('&')]
-
+    result = [bytes(i + '\n', 'utf-8') for i in string.split('&')]
+    start_response('200 OK', [('Content-Type','text/plain')])
+  
     return result
-
-
