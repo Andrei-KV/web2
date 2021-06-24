@@ -14,5 +14,5 @@ Additional code:
     
 Launch gunicorn:
   gunicorn -b 0.0.0.0:8080 hello:application
-  #launch from dictionary with WSGI application hello.py
+  #launch from directory with WSGI application hello.py
   
