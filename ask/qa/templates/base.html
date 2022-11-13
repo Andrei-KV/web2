@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Question and Answer</title>
+    <style>* {
+	box-sizing: inherit;
+}
+
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Helvetica;
+}
+
+.content_wrapper {
+	padding: 3% 0;
+	margin: 0 auto;
+	width: 400px;
+}
+
+h1 {
+	font-weight: 600;
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+
+.text {
+	margin-top: 5px;
+	font-weight: 300;
+	display: flex;
+	align-items: flex-end;
+	flex-grow: 1;
+	font-size: 12px;
+}
+
+.question {
+	margin-top: 70px;
+	font-weight: 700;
+	display: flex;
+	align-items: flex-end;
+	flex-grow: 1;
+	font-size: 18px;
+}
+
+
+
+.wrapper{
+
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.page-link {
+position: relative;
+display: block;
+color: #673AB7 !important;
+text-decoration: none;
+background-color: #fff;
+border: 1px solid #673AB7 !important;
+}
+
+
+.page-link:hover {
+z-index: 2;
+color: #fff !important;
+background-color: #673ab7;
+border-color: #024dbc;
+}
+
+
+.page-link:focus {
+z-index: 3;
+outline: 0;
+box-shadow: none;
+}
+
+    </style>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

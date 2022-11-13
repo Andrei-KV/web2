@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+ 
+<div class="content_wrapper" id="app">
+		<h1>
+            <div class="question">
+                {% for question in questions %}
+                    {{question}}<br><br><br>
+                {% endfor %}
+            </div>
+		</h1>
+
+
+
+
+
+        <div class="wrapper">
+         
+
+     
+    
+            <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        {% for p in paginator.page_range %}
+        <li class="page-item">
+            <a class="page-link" href="{{ paginator.baseurl }}1">{{ "1" }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    </div>
+
+
+	</div>
+</div>
+
+{% endblock %}
