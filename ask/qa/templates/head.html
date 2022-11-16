@@ -2,36 +2,32 @@
 {% block content %}
  
 <div class="content_wrapper" id="app">
-		<h1>
-            <div class="question">
-                {% for question in questions %}
-                    {{question}}<br><br><br>
+	<h1>
+        <div class="question">
+            {% for question in questions %}
+            <br>
+                <p>
+                <a  href="q_page.html"><br>{{ question }}</a>
+                </p>
+            {% endfor %}
+            <br>
+        </div>
+	</h1>
+    <div class="wrapper">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% for p in paginator.page_range %}
+                {% if p == page.number %}
+                    <li class="text">
+                    {% else %}
+                    <li class="page-item">
+                        {% endif %}
+                        <a class="page-link" href="{{ paginator.baseurl }}{{ p }}">{{ p }}</a>
+                    </li>
                 {% endfor %}
-            </div>
-		</h1>
-
-
-
-
-
-        <div class="wrapper">
-         
-
-     
-    
-            <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        {% for p in paginator.page_range %}
-        <li class="page-item">
-            <a class="page-link" href="{{ paginator.baseurl }}1">{{ "1" }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </nav>
+            </ul>
+        </nav>
     </div>
-
-
-	</div>
 </div>
 
 {% endblock %}

@@ -8,13 +8,11 @@ def test(request, *args, **kwargs):
 
 def head(request, *args, **kwargs):
     questions = Question.objects.new()
-    query_p = request.GET['page']
-    limit = request.GET.get('limit', 1)
-    page = request.GET.get('page', query_p)
+    limit = request.GET.get('limit', 2)
+    page = request.GET.get('page', 1)
     paginator = Paginator(questions, limit)
-    paginator.baseurl = '/?page='
+    paginator.baseurl = '?page='
     page = paginator.page(page)
-    print(page)
     context = {
         'questions': page.object_list,
         'paginator': paginator,
